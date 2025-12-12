@@ -18,7 +18,7 @@ const Dashboard = ({ setAuth }) => {
   // FETCH DATA
   const getProfile = async () => {
     try {
-      const res = await fetch(`${process.env.PUBLIC_API_URL}/dashboard/?name=${search}&filter=${filter}`, {
+      const res = await fetch(`${import.meta.env.VITE_API_URL}/dashboard/?name=${search}&filter=${filter}`, {
         method: "GET",
         headers: { token: localStorage.getItem("token") }
       });
@@ -35,7 +35,7 @@ const Dashboard = ({ setAuth }) => {
 
   const getAllUsers = async () => {
       try {
-        const res = await fetch(`${process.env.PUBLIC_API_URL}/admin/users`, {
+        const res = await fetch(`${import.meta.env.VITE_API_URL}/admin/users`, {
             method: "GET",
             headers: { token: localStorage.getItem("token") }
         });
@@ -61,7 +61,7 @@ const Dashboard = ({ setAuth }) => {
     if (!description) return;
     try {
       const body = { description };
-      const response = await fetch(`${process.env.PUBLIC_API_URL}/dashboard/todos`, {
+      const response = await fetch(`${import.meta.env.VITE_API_URL}/dashboard/todos`, {
         method: "POST",
         headers: { "Content-Type": "application/json", token: localStorage.getItem("token") },
         body: JSON.stringify(body)
@@ -82,7 +82,7 @@ const Dashboard = ({ setAuth }) => {
   const saveEdit = async (id) => {
       try {
           const body = { description: editText };
-          await fetch(`${process.env.PUBLIC_API_URL}/dashboard/todos/${id}`, {
+          await fetch(`${import.meta.env.VITE_API_URL}/dashboard/todos/${id}`, {
             method: "PUT",
             headers: { "Content-Type": "application/json", token: localStorage.getItem("token") },
             body: JSON.stringify(body)
@@ -97,7 +97,7 @@ const Dashboard = ({ setAuth }) => {
       e.preventDefault();
       try {
           const body = { username: name, password: newPassword || undefined };
-          await fetch(`${process.env.PUBLIC_API_URL}/dashboard/user`, {
+          await fetch(`${import.meta.env.VITE_API_URL}/dashboard/user`, {
               method: "PUT",
               headers: { "Content-Type": "application/json", token: localStorage.getItem("token") },
               body: JSON.stringify(body)
@@ -110,7 +110,7 @@ const Dashboard = ({ setAuth }) => {
 
   const deleteTodo = async id => {
     try {
-      await fetch(`${process.env.PUBLIC_API_URL}/dashboard/todos/${id}`, {
+      await fetch(`${import.meta.env.VITE_API_URL}/dashboard/todos/${id}`, {
         method: "DELETE",
         headers: { token: localStorage.getItem("token") }
       });
@@ -122,7 +122,7 @@ const Dashboard = ({ setAuth }) => {
       setTodos(todos.map(todo => todo.todo_id === id ? { ...todo, is_completed: !status } : todo));
       try {
         const body = { is_completed: !status };
-        await fetch(`${process.env.PUBLIC_API_URL}/dashboard/todos/${id}`, {
+        await fetch(`${import.meta.env.VITE_API_URL}/dashboard/todos/${id}`, {
             method: "PUT",
             headers: { "Content-Type": "application/json", token: localStorage.getItem("token") },
             body: JSON.stringify(body)
@@ -133,7 +133,7 @@ const Dashboard = ({ setAuth }) => {
   const deleteUser = async (id) => {
       if(!window.confirm("Are you sure?")) return;
       try {
-        await fetch(`${process.env.PUBLIC_API_URL}/admin/users/${id}`, {
+        await fetch(`${import.meta.env.VITE_API_URL}/admin/users/${id}`, {
             method: "DELETE",
             headers: { token: localStorage.getItem("token") }
         });

@@ -12,7 +12,7 @@ function App() {
   };
   const isAuth = async () => {
     try {
-      const response = await fetch(`${process.env.PUBLIC_API_URL}/auth/is-verify`, {
+      const response = await fetch(`${import.meta.env.VITE_API_URL}/auth/is-verify`, {
         method: "GET",
         headers: { token: localStorage.getItem("token") }
       });
