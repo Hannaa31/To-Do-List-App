@@ -1,0 +1,141 @@
+{
+	"info": {
+		"_postman_id": "64eb6253-b5e6-4f30-9079-e135d3020540",
+		"name": "To-Do-List-App",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "46163666",
+		"_collection_link": "https://sayaa-6349169.postman.co/workspace/Sayaa's-Workspace~95c12040-da92-4f3e-88f1-4460cad9292e/collection/46163666-64eb6253-b5e6-4f30-9079-e135d3020540?action=share&source=collection_link&creator=46163666"
+	},
+	"item": [
+		{
+			"name": "Register User",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"name\": \"Test User\",\r\n  \"email\": \"test@example.com\",\r\n  \"password\": \"password123\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://to-do-list-app-7s9i.onrender.com/auth/register",
+					"protocol": "https",
+					"host": [
+						"to-do-list-app-7s9i",
+						"onrender",
+						"com"
+					],
+					"path": [
+						"auth",
+						"register"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Login User",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"email\": \"test@example.com\",\r\n  \"password\": \"password123\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://to-do-list-app-7s9i.onrender.com/auth/login",
+					"protocol": "https",
+					"host": [
+						"to-do-list-app-7s9i",
+						"onrender",
+						"com"
+					],
+					"path": [
+						"auth",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get all todos",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjoiYjJiNzg5ZWItZTc5MS00YjA5LTllZTMtZTMxNDU4YWQ0MWUxIiwiaWF0IjoxNzY1NTY1MzIwLCJleHAiOjE3NjU1Njg5MjB9.bl_YjzbR2WFdIdhDGHSXXTPyO5KoAUqJSrI9khJ733w",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"email\": \"test@example.com\",\r\n  \"password\": \"password123\"\r\n}"
+				},
+				"url": {
+					"raw": "https://to-do-list-app-7s9i.onrender.com/dashboard",
+					"protocol": "https",
+					"host": [
+						"to-do-list-app-7s9i",
+						"onrender",
+						"com"
+					],
+					"path": [
+						"dashboard"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create todos",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjoiYjJiNzg5ZWItZTc5MS00YjA5LTllZTMtZTMxNDU4YWQ0MWUxIiwiaWF0IjoxNzY1NTY1MzIwLCJleHAiOjE3NjU1Njg5MjB9.bl_YjzbR2WFdIdhDGHSXXTPyO5KoAUqJSrI9khJ733w",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"description\": \"Finish the internship assignment\"\r\n}"
+				},
+				"url": {
+					"raw": "https://to-do-list-app-7s9i.onrender.com/dashboard/todos?",
+					"protocol": "https",
+					"host": [
+						"to-do-list-app-7s9i",
+						"onrender",
+						"com"
+					],
+					"path": [
+						"dashboard",
+						"todos"
+					],
+					"query": [
+						{
+							"key": "",
+							"value": null
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
