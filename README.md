@@ -143,5 +143,5 @@ Update fetch URLs in frontend to point to deployed backend.
 ## 🧑‍💻 Developed by
 
 **Sakshi**\
-GitHub: **Hannaa31**
-Website: **To Do List by Sakshi**
+- GitHub: **Hannaa31**
+- Website: **To Do List by Sakshi**
