@@ -5,7 +5,6 @@ management application built with **Vite** and **Tailwind CSS**.\
 It allows users to **register and login**, manage personal tasks, update
 profiles, and features **Role-Based Access Control (RBAC)** for
 administrators.
-**Live Demo:** [Frontend Link (Vercel)](https://to-do-list-app-iota-ten.vercel.app/)
 ------------------------------------------------------------------------
 
 ## 🚀 Features
