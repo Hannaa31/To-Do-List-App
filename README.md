@@ -141,7 +141,7 @@ Update fetch URLs in frontend to point to deployed backend.
 ------------------------------------------------------------------------
 
 ## 🧑‍💻 Developed by
+**Sakshi**  
+GitHub: [Hannaa31](https://github.com/Hannaa31)  
+Website: [To Do List App by Sakshi](https://notes-app-three-swart.vercel.app/)
 
-**Sakshi**
-- GitHub: **Hannaa31**
-- Website: **To Do List by Sakshi**
