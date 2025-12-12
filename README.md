@@ -1,11 +1,11 @@
-# 📝 Full Stack PERN Dashboard by Sakshi
+# 📝 To Do List App by Sakshi
 
 A robust and secure **PostgreSQL + Express + React + Node.js** task
 management application built with **Vite** and **Tailwind CSS**.\
 It allows users to **register and login**, manage personal tasks, update
 profiles, and features **Role-Based Access Control (RBAC)** for
 administrators.
-
+**Live Demo:** [Frontend Link (Vercel)](https://to-do-list-app-iota-ten.vercel.app/) | [Backend API (Render)](https://to-do-list-app-7s9i.onrender.com/)
 ------------------------------------------------------------------------
 
 ## 🚀 Features
@@ -138,6 +138,22 @@ Deploy **client/** on: - Vercel
 
 Update fetch URLs in frontend to point to deployed backend.
 
+------------------------------------------------------------------------
+## 📈 Scalability Considerations
+
+### Frontend Scaling (React/Vite)
+* **CDN & Caching:** Deploy static assets (JS, CSS, Images) via a CDN (like Cloudflare or Vercel Edge Network) to reduce latency globally.
+* **State Management:** As the app grows, replace `useState/useEffect` with **Redux Toolkit** or **TanStack Query** to handle server-state caching and minimize API calls.
+* **Code Splitting:** Implement lazy loading (`React.lazy`) for routes like the Admin Dashboard to reduce the initial bundle size.
+
+### Backend Scaling (Node.js/Express)
+* **Horizontal Scaling:** Use a Load Balancer (like NGINX or AWS ALB) to distribute traffic across multiple instances of the Node.js server.
+* **Database Optimization:**
+    * **Indexing:** Ensure frequently queried columns (like `user_id` and `email`) are indexed in PostgreSQL.
+    * **Connection Pooling:** Use `pg-pool` (already implemented) to manage database connections efficiently under load.
+    * **Read Replicas:** Separate Read and Write database operations to handle high traffic.
+* **Caching Strategy:** Implement **Redis** to cache user sessions and frequently accessed To-Do lists, reducing direct database hits.
+* **Microservices:** If the "Admin" features grow complex, extract the Admin/User management into a separate microservice, decoupled from the core "To-Do" logic.
 ------------------------------------------------------------------------
 
 ## 🧑‍💻 Developed by
